@@ -1,0 +1,97 @@
+<div class="container">
+
+
+    <div class="row">
+      <div class="col-4">
+            <section>
+                <div class="example-label">Start</div>
+                <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                    <button mat-fab color="primary" (click)='startTimer()' disabled="{{this.started}}" aria-label="Example icon button with a delete icon">
+                        <mat-icon matTooltip="Start new game" matTooltipPosition="above">play_arrow</mat-icon>
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </section>
+          <mat-divider></mat-divider>
+          <section>
+            <div class="example-label">Pause</div>
+            <div class="example-button-row">
+            <div class="example-flex-container">
+                <div class="example-button-container">
+                <button mat-fab color="primary" (click)='pauseTimer()' aria-label="Example icon button with a delete icon">
+                    <mat-icon matTooltip="Pause the game" matTooltipPosition="above">pause</mat-icon>
+                </button>
+                </div>
+            </div>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+          <section>
+            <div class="example-label">Stop</div>
+            <div class="example-button-row">
+            <div class="example-flex-container">
+                <div class="example-button-container">
+                <button mat-fab color="primary" (click)='stopTimer()' aria-label="Example icon button with a delete icon">
+                    <mat-icon matTooltip="Stop the game" matTooltipPosition="above">stop</mat-icon>
+                </button>
+                </div>
+            </div>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Last Score: </div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <mat-label><strong>{{lastScore}}</strong></mat-label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-label">Total Score: </div>
+            <div class="example-button-row">
+                <div class="example-flex-container">
+                    <div class="example-button-container">
+                        <mat-label><strong>{{totalScore}}</strong></mat-label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+      </div>
+      
+      <div class="col-8">
+
+        <div class="row">
+            <div class="col-md-4 example-box-new justify-content-center">"Japanese"</div>
+            <div class="col-md-4 ms-auto example-box-new justify-content-center">"Chinese"</div>
+        </div>
+        <marquee behavior="scroll" direction="down" style="visibility: {{this.visibleMarquee}};" scrollamount="11" #marqueeBox>
+            <div class="row justify-content-center" style="height: 300px;">
+                <div class="example-box align-self-center" cdkDrag 
+                (cdkDragEnded)="dragEnd($event)"
+                [cdkDragFreeDragPosition]="dragPosition">
+                    
+                    <img src="{{picAddress}}" alt="">
+                </div>
+            </div>
+        </marquee>
+        
+        
+        <div class="row">
+            <div class="col-auto me-auto example-box-new justify-content-center">"Korean"</div>
+            <div class="col-auto example-box-new justify-content-center">"Thai"</div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  
