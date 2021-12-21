@@ -53,6 +53,8 @@
     font-size: 14px;
     margin-left: 8px;
     min-width: 120px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   
   .example-button-row {
@@ -75,4 +77,3 @@
     justify-content: center;
     width: 120px;
   }
-  
